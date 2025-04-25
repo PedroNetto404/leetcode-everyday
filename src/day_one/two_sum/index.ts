@@ -1,16 +1,13 @@
 function twoSum(nums: number[], target: number): number[] {
-  let i = 0,
-    j = nums.length - 1;
+  const hash: { [key: number]: number } = {};
 
-  while (i < j) {
-    const sum = nums[i] + nums[j];
-    if (sum === target) {
-      return [i, j];
-    }
-    if (sum < target) {
-      i++;
+  for (let i = 0; i < nums.length; ++i) {
+    let num = nums[i];
+    const mapItem = hash[num];
+    if (mapItem !== undefined) {
+      return [mapItem, i];
     } else {
-      j--;
+      hash[target - num] = i;
     }
   }
   return [];
