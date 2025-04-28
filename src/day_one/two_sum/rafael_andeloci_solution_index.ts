@@ -1,3 +1,4 @@
+// Developed by https://github.com/RafaelAndeloci
 function twoSum(nums: number[], target: number): number[] {
   const hash: { [key: number]: number } = {};
 
